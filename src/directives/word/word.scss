@@ -1,0 +1,38 @@
+@import '../../vars';
+
+.word {
+	display: flex;
+	padding: 0;
+	margin: 30px 0;
+
+	li {
+		border-bottom: 1px solid $foreground;
+		width: 10px;
+		margin: 0 5px;
+		list-style: none;
+		height: 12px;
+		text-align: center;
+
+		span {
+			display: block;
+			animation: word-scaleOut .2s;
+		}
+	}
+}
+
+@keyframes word-scaleOut {
+	0% {
+		transform: scale(20);
+		opacity: .2;
+	}
+
+	90% {
+		transform: scale(.7);
+		opacity: .9;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}

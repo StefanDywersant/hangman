@@ -1,0 +1,9 @@
+<div class="loading" ng-show="game.loading">loading...</div>
+
+<div class="game" ng-hide="game.loading">
+	<h1>Stage {{game.logic.stage + 1}}/{{game.stagesCount}}</h1>
+	<p>{{game.time | timeFormat}}</p>
+	<word letters="game.logic.wordState"></word>
+	<keyboard disabled-keys="game.logic.usedLetters" on-key-press="game.onGuess(key)"></keyboard>
+	<hangman step="game.logic.wrongLetters.length" max-steps="game.allowedMistakes"></hangman>
+</div>

@@ -1,0 +1,23 @@
+@import './vars';
+
+body {
+	background: $background;
+	color: $foreground;
+	font: 12px monospace;
+}
+
+button {
+	background: $background;
+	color: $foreground;
+	font: 12px monospace;
+	border: 1px solid $foreground;
+	outline: none;
+	padding: 3px 6px;
+	cursor: pointer;
+	border-radius: 4px;
+
+	&:active {
+		color: $background;
+		background: $foreground;
+	}
+}

@@ -1,0 +1,9 @@
+<ul class="keyboard">
+	<li ng-repeat="letter in ALPHABET">
+		<button
+				ng-disabled="disabledKeys.indexOf(letter) > -1"
+				ng-click="onKeyPress({key:letter})">
+			{{letter}}
+		</button>
+	</li>
+</ul>

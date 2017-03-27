@@ -1,0 +1,112 @@
+@import '../../vars';
+
+.hangman {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	border: 1px dashed $foreground;
+	margin: 30px 0;
+
+	i {
+		position: absolute;
+		display: block;
+	}
+
+	.gallows {
+		& {
+			background: $foreground;
+			border-radius: 5px;
+		}
+
+		&.part-1 {
+			transform: rotate(45deg);
+			top: 80%; right: 75%; bottom: 0; left: 20%;
+		}
+
+		&.part-2 {
+			transform: rotate(315deg);
+			top: 80%; right: 65%; bottom: 0; left: 30%;
+		}
+
+		&.part-3 {
+			top: 10%; right: 65%; bottom: 75%; left: 30%;
+			transform: rotate(45deg);
+		}
+
+		&.part-4 {
+			top: 10%; right: 70%; bottom: 2%; left: 25%;
+		}
+
+		&.part-5 {
+			top: 10%; right: 35%; bottom: 85%; left: 25%;
+		}
+
+		&.part-6 {
+			top: 10%; right: 35%; bottom: 75%; left: 60%;
+		}
+	}
+
+	.man {
+		font-family: sans-serif;
+		font-weight: bold;
+		font-style: normal;
+		color: #364395;
+		left: 60%;
+		font-size: 14px;
+		animation: hangman-scaleIn .2s;
+		width: 5%;
+		text-align: center;
+
+		&.part-1 {
+			&:before { content: 'P' }
+			top: 25%;
+		}
+
+		&.part-2 {
+			&:before { content: 'E' }
+			top: 32%;
+		}
+
+		&.part-3 {
+			&:before { content: 'A' }
+			top: 39%;
+		}
+
+		&.part-4 {
+			&:before { content: 'R' }
+			top: 46%;
+		}
+
+		&.part-5 {
+			&:before { content: 'S' }
+			top: 53%;
+		}
+
+		&.part-6 {
+			&:before { content: 'O' }
+			top: 60%;
+		}
+
+		&.part-7 {
+			&:before { content: 'N' }
+			top: 67%;
+		}
+	}
+}
+
+@keyframes hangman-scaleIn {
+	0% {
+		transform: scale(20);
+		opacity: .2;
+	}
+
+	90% {
+		transform: scale(.7);
+		opacity: .9;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
