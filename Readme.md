@@ -1,6 +1,8 @@
 # Hangman
 Hangman game.
 
+### [Online demo here](http://maciaszek.pl/hangman/)
+
 
 ## Installation
 ```sh
