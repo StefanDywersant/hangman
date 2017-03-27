@@ -7,7 +7,7 @@ import config from '../constants/config.constant';
  */
 
 
-const factory = function(allowedMistakes) {
+const factory = function(allowedMistakes, alphabet) {
 
 
 	/**
@@ -19,10 +19,10 @@ const factory = function(allowedMistakes) {
 		/**
 		 * Initializes hangman game.
 		 * @param {HangmanWord[]} answers Answers for all stages list
-		 * @param {{allowedMistakes: number}} config Game configuration
+		 * @param {{allowedMistakes: number, alphabet: string}} config Game configuration
 		 */
-		constructor(answers, config = {allowedMistakes}) {
-			this.config = config;
+		constructor(answers, config) {
+			this.config = Object.assign({allowedMistakes, alphabet}, config);
 			this.handlers = {};
 			this.answers = answers;
 			this.stage = 0;
@@ -48,6 +48,11 @@ const factory = function(allowedMistakes) {
 		guess(letter) {
 			// give up if the letter was tried already
 			if (this.usedLetters.indexOf(letter) > -1) {
+				return;
+			}
+			
+			// ignore letters not present in alphabet
+			if (this.config.alphabet.indexOf(letter) == -1) {
 				return;
 			}
 
@@ -151,5 +156,5 @@ const factory = function(allowedMistakes) {
 
 
 export default angular.module('services.GameLogic', [config])
-	.factory('GameLogic', ['ALLOWED_MISTAKES', factory])
+	.factory('GameLogic', ['ALLOWED_MISTAKES', 'ALPHABET', factory])
 	.name;
