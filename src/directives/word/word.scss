@@ -13,6 +13,10 @@
 		height: 12px;
 		text-align: center;
 
+		&.space {
+			border-bottom: none;
+		}
+
 		span {
 			display: block;
 			animation: word-scaleOut .2s;

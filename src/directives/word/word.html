@@ -1,5 +1,5 @@
 <ul class="word">
-	<li ng-repeat="letter in letters track by $index">
+	<li ng-repeat="letter in letters track by $index" ng-class="{space: letter == ' '}">
 		<span ng-show="letter">{{letter}}</span>
 	</li>
 </ul>

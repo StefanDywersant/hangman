@@ -28,12 +28,7 @@ const factory = function(allowedMistakes) {
 			this.stage = 0;
 			this.usedLetters = [];
 			this.wrongLetters = [];
-
-			/**
-			 *
-			 * @type {Array}
-			 */
-			this.wordState = this.answer.map(letter => null);
+			this.wordState = this.answer.map(letter => letter == ' ' ? ' ' : null);
 		}
 
 
@@ -86,7 +81,7 @@ const factory = function(allowedMistakes) {
 			this.stage++;
 			this.usedLetters = [];
 			this.wrongLetters = [];
-			this.wordState = this.answer.map(letter => null);
+			this.wordState = this.answer.map(letter => letter == ' ' ? ' ' : null);
 		}
 
 
