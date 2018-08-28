@@ -1,7 +1,7 @@
 # Hangman
 Hangman game.
 
-### [Online demo here](http://maciaszek.pl/hangman/)
+### [Online demo here](https://stefandywersant.github.io/hangman/)
 
 
 ## Installation
